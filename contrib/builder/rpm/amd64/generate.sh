@@ -102,6 +102,9 @@ for version in "${versions[@]}"; do
 		git # required for containerd and runc clone
 		cmake # tini build
 		vim-common # tini build
+		gpgme-devel # tini build
+		libassuan
+		libassuan-devel
 	)
 
 	case "$from" in

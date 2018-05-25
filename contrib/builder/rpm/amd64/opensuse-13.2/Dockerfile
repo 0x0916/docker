@@ -5,7 +5,7 @@
 FROM opensuse:13.2
 
 RUN zypper --non-interactive install ca-certificates* curl gzip rpm-build
-RUN zypper --non-interactive install libaudit-dev libbtrfs-devel device-mapper-devel glibc-static  libselinux-devel libtool-ltdl-devel pkg-config selinux-policy selinux-policy-devel sqlite-devel systemd-devel tar git systemd-rpm-macros cmake vim
+RUN zypper --non-interactive install audit-libs-devel audit-libs-static libbtrfs-devel device-mapper-devel glibc-static  libselinux-devel libtool-ltdl-devel pkg-config selinux-policy selinux-policy-devel sqlite-devel systemd-devel tar git cmake vim gpgme-devel libassuan libassuan-devel systemd-rpm-macros
 
 ENV GO_VERSION 1.7.5
 RUN curl -fSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar xzC /usr/local

@@ -72,10 +72,13 @@ endif
 
 DOCKER_RUN_DOCKER := $(DOCKER_FLAGS) "$(DOCKER_IMAGE)"
 
-default: binary
+default: dynbinary
 
 all: build ## validate all checks, build linux binaries, run all tests\ncross build non-linux binaries and generate archives
 	$(DOCKER_RUN_DOCKER) bash -c 'hack/validate/default && hack/make.sh'
+
+dynbinary: build ## build the linux binaries
+	$(DOCKER_RUN_DOCKER) hack/make.sh dynbinary
 
 binary: build ## build the linux binaries
 	$(DOCKER_RUN_DOCKER) hack/make.sh binary

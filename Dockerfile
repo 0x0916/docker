@@ -137,6 +137,7 @@ RUN set -x \
 		&& make \
 		&& make install \
 		&& ldconfig \
+		&& ln -s /usr/lib/pkgconfig/libseccomp.pc /usr/lib64/pkgconfig \
 	) \
 	&& rm -rf "$SECCOMP_PATH"
 

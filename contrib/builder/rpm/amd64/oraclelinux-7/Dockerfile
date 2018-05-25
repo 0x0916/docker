@@ -5,7 +5,7 @@
 FROM oraclelinux:7
 
 RUN yum groupinstall -y "Development Tools"
-RUN yum install -y --enablerepo=ol7_optional_latest btrfs-progs-devel device-mapper-devel libseccomp-devel glibc-static audit-libs-devel libselinux-devel libtool-ltdl-devel pkgconfig selinux-policy selinux-policy-devel sqlite-devel systemd-devel tar git cmake vim-common
+RUN yum install -y --enablerepo=ol7_optional_latest audit-libs-devel audit-libs-static btrfs-progs-devel device-mapper-devel glibc-static libseccomp-devel libselinux-devel libtool-ltdl-devel pkgconfig selinux-policy selinux-policy-devel sqlite-devel systemd-devel tar git cmake vim-common gpgme-devel libassuan libassuan-devel
 
 ENV GO_VERSION 1.7.5
 RUN curl -fSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar xzC /usr/local

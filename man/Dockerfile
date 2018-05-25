@@ -1,6 +1,6 @@
 FROM    golang:1.7.5-alpine
 
-RUN     apk add -U git bash curl gcc musl-dev make
+RUN     apk add -U git bash curl gcc musl-dev make gpgme-dev
 
 RUN     mkdir -p /go/src /go/bin /go/pkg
 RUN     export GLIDE=v0.11.1; \
